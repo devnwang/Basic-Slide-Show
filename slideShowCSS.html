@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<title> JQuery Slideshow </title>
+		<style>
+			#container {
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				width: 1200px;
+				height: 600px;
+				background-color: green;
+			}
+			
+			#slideShow {
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				width: 1180px;
+				height: 500px;
+				background-color: skyBlue;
+			}
+			
+			#addRemovePanel {
+				position: absolute;
+				left: 10px;
+				top: 520px;
+				width: 1180px;
+				height: 70px;
+				background-color: red;
+				text-align: center;
+			}
+			
+			.back {
+				border: 1px solid;
+				position: absolute;
+				top: 10px;
+				width: 76px;
+				height: 87.25px;
+				z-index: 0;
+				opacity: 0.50;
+			}
+			
+			.middle {
+				border: 1px solid;
+				position: absolute;
+				top: 53.625px;
+				width: 152px;
+				height: 174.5px;
+				z-index: 1;
+				opacity: 0.75;
+			}
+			
+			.front {
+				border: 1px solid;
+				position: absolute;
+				top: 140.875px;
+				width: 304px;
+				height: 349px;
+				z-index: 2;
+			}
+			
+			#pic0 {
+				left: 10px;
+			}
+			
+			#pic1 {
+				left: 48px;
+			}
+			
+			#pic2 {
+				left: 124px;
+			}
+			
+			#pic3 {
+				left: 438px;
+			}
+			
+			#pic4 {
+				left: 752px;
+			}
+			
+			#pic5 {
+				left: 980px;
+			}
+			
+			#pic6 {
+				left: 1096px;
+			}
+			
+			.arrow {
+				width:50px;
+				height: 50px;
+				position: absolute;
+				top: 10px;
+			}
+			
+			#leftArrow {
+				left: 10px;
+			}
+			
+			#rightArrow {
+				left: 1120px;
+			}
+			
+			.addRemoveImg {
+				margin-top: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="slideShow">
+				<img id="pic0" src="pic0.jpg" class="back"></img>
+				<img id="pic1" src="pic1.jpg" class="middle"></img>
+				<img id="pic2" src="pic2.jpg" class="front"></img>
+				<img id="pic3" src="pic3.jpg" class="front"></img>
+				<img id="pic4" src="pic4.jpg" class="front"></img>
+				<img id="pic5" src="pic5.jpg" class="middle"></img>
+				<img id="pic6" src="pic6.jpg" class="back"></img>
+			</div>
+			<div id="addRemovePanel">
+				<img id="leftArrow" src="leftArrow.jpg" class="arrow"></img>
+				<input type="textbox" id="fileText" class="addRemoveImg"></input>
+				<input type="button" id="addImg" value="Add Image" class="addRemoveImg"></input>
+				<input type="button" id="removeImg" value="Remove Center Image" class="addRemoveImg"></input>
+				<img id="rightArrow" src="rightArrow.jpg" class="arrow"></img>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title> JQuery Slideshow </title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="WangN_ThaiL_JQuerySlideShow.js"></script>
+		<script>
+		/**
+		The following JQuery commands have been used...
+		1. ready() -- functions like Javascript's window.onload, which waits for the page to load before running anything
+		2. click() -- adds an onClick listener to the JQuery element
+		3. remove() -- takes the selected JQuery element and completely deletes it
+		
+		The following JQuery commands have been used to create a new SlideShow. The commands add functions to certain elements within SlideShow, such as the left and right arrow that rotates the SlideShow pictures, and the text box, and add and remove button that allows the user to add and remove as many images as they want.
+		**/
+		$(document).ready(function() {
+			var show = new SlideShow(id);
+			show.displaySlideShow();
+			$(".leftArrow").click( function() {
+				show.rotateLeft();
+			});
+			$(".rightArrow").click( function() {
+				show.rotateRight();
+			});
+			//pushes the inputted file name into imgArr and appends the new image to the slide show
+			$("input[value='Add Image']").click( function() {
+				show.imgArr.push(show.fileText.val());
+				$(show.slideShowPanel).append(show.addNewPic());
+				picNum = picNum+1;
+				return picNum;
+
+				}
+			);
+			//removes the center image and animates all the positions to the right of the center image to the left to fill the removed image
+			$("input[value='Remove Center Image']").click( function() {
+				$(".pos3").remove();
+				for (i=4; i<show.imgArr.length; i++) {
+					var j= i-1;
+					$("img[class='pos"+i+"']").animate(show.imgCSS[j],1000);
+					$("img[class='pos"+i+"']").attr({"class": "pos"+j});
+				}
+				show.imgArr.splice(show.imgArr.length-1,1);
+				picNum = picNum-1;
+				return picNum;
+			})
+		});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
